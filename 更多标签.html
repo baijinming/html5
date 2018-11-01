@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <time datetime="2018-9-8">今天</time>
+    <mark>荧光标记</mark>
+    <progress max="100" value="20"></progress>
+    <meter max="100" value="50"></meter>
+    <!-- 以上标签 都是inline行级标签-->
+    <figure>
+        <figcaption>
+            媒体区
+        </figcaption>
+    </figure>
+</body>
+<script>
+    let progress = document.getElementsByTagName('progress')[0];
+    setInterval(() => {
+        progress.value += 1
+    },1000)
+</script>
+</html>

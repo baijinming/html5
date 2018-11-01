@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        video {
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <video controls >
+        <source src="./03移动端表单注意点.mp4">
+    </video>
+    <button>静音</button>
+    <button>播放</button>
+    <button>暂停</button>
+    <button>2倍速</button>
+    <button>音量加</button>
+    <button>音量减</button>
+</body>
+<script>
+    let video = document.getElementsByTagName('video')[0];
+    let btns = document.getElementsByTagName('button');
+    btns[0].onclick = () => {
+        video.muted = true
+    };
+    btns[1].onclick = () => {
+        video.play()
+    };
+    btns[2].onclick = () => {
+        video.pause()
+    };
+    btns[3].onclick = () => {
+        video.playbackRate = 2
+    };
+    btns[4].onclick = () => {
+        if(video.volume <= 0.9) {
+            video.volume += 0.1
+        }
+    };
+    btns[5].onclick = () => {
+        if(video.volume >= 0.1) {
+            video.volume -= 0.1
+        }
+    };
+</script>
+</html>
