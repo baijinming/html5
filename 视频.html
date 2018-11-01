@@ -20,12 +20,14 @@
     <button>2倍速</button>
     <button>音量加</button>
     <button>音量减</button>
+    <button>快进</button>
 </body>
 <script>
     let video = document.getElementsByTagName('video')[0];
     let btns = document.getElementsByTagName('button');
     btns[0].onclick = () => {
-        video.muted = true
+        video.muted = !video.muted;
+        btns[0].innerText = video.muted ? '不静音' : '静音'
     };
     btns[1].onclick = () => {
         video.play()
@@ -45,6 +47,9 @@
         if(video.volume >= 0.1) {
             video.volume -= 0.1
         }
+    };
+    btns[6].onclick = () => {
+        video.currentTime += 5
     };
 </script>
 </html>
