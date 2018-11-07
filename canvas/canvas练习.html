@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #canvas {
+            background: #f1f3f5;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="800"></canvas>
+</body>
+<script src="utils.js"></script>
+<script>
+    let canvas = document.getElementById('canvas');
+    let ctx = canvas.getContext('2d');
+
+    // ctx.beginPath();
+    // ctx.moveTo(50, 50);
+    // ctx.lineTo(300, 50);
+    // ctx.lineTo(200, 160);
+    // ctx.closePath();
+    // ctx.fillStyle = 'skyblue';
+    // ctx.fill();
+    // ctx.strokeStyle = '#f00';
+    // ctx.stroke();
+
+    // let color = ctx.createLinearGradient(0 , 0, 800, 0);
+    // color.addColorStop(0, 'red');
+    // color.addColorStop(1, 'blue');
+    // ctx.rect(0, 100, 800, 200);
+    // ctx.fillStyle = color;
+    // ctx.fill()
+
+    let left = 100;
+    let topY = 100;
+    let vx = 1;
+    let vy = 2;
+
+    function go() {if(left >= 750 || left <= 50){
+        vx = -vx
+    }
+
+        ctx.beginPath();
+        let color = ctx.createRadialGradient(left, topY, 0, left, topY, 50);
+        color.addColorStop(0, 'yellow');
+        color.addColorStop(1, 'red');
+        ctx.arc(left, topY, 50, getRad(0), getRad(360));
+        ctx.fillStyle = color;
+        ctx.fill();
+
+        if(left >= 750 || left <= 50){
+            vx = -vx
+        }
+        if(topY >= 750 || topY <= 50){
+            vy = -vy
+        }
+        left += vx;
+        topY += vy;
+
+        requestAnimationFrame(go)
+    }
+    requestAnimationFrame(go)
+
+
+</script>
+</html>
