@@ -34,36 +34,37 @@
     // ctx.fillStyle = color;
     // ctx.fill()
 
-    let left = 100;
-    let topY = 100;
-    let vx = 1;
-    let vy = 2;
+    // let left = 100;
+    // let topY = 100;
+    // let vx = 1;
+    // let vy = 2;
+    //
+    // function go() {
+    //     ctx.clearRect(0,0,800,800)
+    //     ctx.beginPath();
+    //     let color = ctx.createRadialGradient(left, topY, 0, left, topY, 50);
+    //     color.addColorStop(0, 'yellow');
+    //     color.addColorStop(1, 'red');
+    //     ctx.arc(left, topY, 50, getRad(0), getRad(360));
+    //     ctx.fillStyle = color;
+    //     ctx.fill();
+    //
+    //     if(left >= 750 || left <= 50){
+    //         vx = -vx
+    //     }
+    //     if(topY >= 750 || topY <= 50){
+    //         vy = -vy
+    //     }
+    //     left += vx;
+    //     topY += vy;
+    //
+    //     requestAnimationFrame(go)
+    // }
+    // requestAnimationFrame(go)
 
-    function go() {if(left >= 750 || left <= 50){
-        vx = -vx
-    }
-
-        ctx.beginPath();
-        let color = ctx.createRadialGradient(left, topY, 0, left, topY, 50);
-        color.addColorStop(0, 'yellow');
-        color.addColorStop(1, 'red');
-        ctx.arc(left, topY, 50, getRad(0), getRad(360));
-        ctx.fillStyle = color;
-        ctx.fill();
-
-        if(left >= 750 || left <= 50){
-            vx = -vx
-        }
-        if(topY >= 750 || topY <= 50){
-            vy = -vy
-        }
-        left += vx;
-        topY += vy;
-
-        requestAnimationFrame(go)
-    }
-    requestAnimationFrame(go)
-
+    ctx.translate(50,50);
+    ctx.rotate(getRad(45));
+    ctx.fillRect(0,0,100,100);
 
 </script>
 </html>
